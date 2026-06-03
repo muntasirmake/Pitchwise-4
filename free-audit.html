@@ -171,37 +171,55 @@
     input.addEventListener("input", clearError);
 
     form.addEventListener("submit", function (e) {
+      e.preventDefault();
       clearError();
 
       // Native validation for text/email/select fields
       if (!form.checkValidity()) {
-        e.preventDefault();
         form.reportValidity();
         return;
       }
       // Require a valid deck link
       var link = input.value.trim();
       if (!link) {
-        e.preventDefault();
         showError("Please add a link to your pitch deck.");
         input.focus();
         return;
       }
       if (!isValidUrl(link)) {
-        e.preventDefault();
         showError("Please enter a valid link (e.g. https://drive.google.com/...).");
         input.focus();
         return;
       }
 
-      // Valid — allow native POST to Web3Forms.
-      // The hidden "redirect" field sends the user to the thank-you page on success.
+      // Submit via fetch so WE control the redirect — not Web3Forms' server.
       var btn = form.querySelector(".btn-submit");
       if (btn) {
-        btn.textContent = "Submitting…";
+        btn.textContent = "Submitting\u2026";
         btn.style.pointerEvents = "none";
         btn.style.opacity = "0.7";
       }
+
+      var formData = new FormData(form);
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+      })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data.success) {
+          window.location.href = "https://pitchwise.xyz/thank-you.html";
+        } else {
+          if (btn) { btn.textContent = "Submit my deck for audit"; btn.style.pointerEvents = ""; btn.style.opacity = ""; }
+          showError(data.message || "Something went wrong. Please try again.");
+        }
+      })
+      .catch(function () {
+        if (btn) { btn.textContent = "Submit my deck for audit"; btn.style.pointerEvents = ""; btn.style.opacity = ""; }
+        showError("Network error. Please check your connection and try again.");
+      });
     });
   })();
 
