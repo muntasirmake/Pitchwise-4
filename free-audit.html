@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Free Pitch Deck Audit — PitchWise</title>
+<meta name="description" content="Upload your pitch deck and get a focused review of the biggest narrative, structure, and investor-readiness gaps." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="audit.css" />
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+<!-- ============================================================ NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="PitchWise.html">
+      <span class="brand-mark">P</span>
+      PitchWise
+    </a>
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="PitchWise.html#get">Get Pitch OS for $29</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="audit-page">
+    <div class="wrap">
+      <div class="audit-layout">
+
+        <!-- ---------------------------------------- LEFT: COPY -->
+        <div class="audit-copy">
+          <span class="hero-badge"><span class="dot"></span> Free deck audit · 24–48 hour turnaround</span>
+          <h1>Get a free pitch deck audit</h1>
+          <p class="lede">Upload your deck and get a focused review of the biggest narrative, structure, and investor-readiness gaps.</p>
+          <ul class="audit-points">
+            <li><span class="ic">✓</span><span>Specific feedback based on your deck and stage</span></li>
+            <li><span class="ic">✓</span><span>Biggest narrative and structure gaps</span></li>
+            <li><span class="ic">✓</span><span>Priority fixes before investor conversations</span></li>
+            <li><span class="ic">✓</span><span>No generic advice</span></li>
+            <li><span class="ic">✓</span><span>No vague design comments</span></li>
+          </ul>
+        </div>
+
+        <!-- ---------------------------------------- RIGHT: FORM -->
+        <div class="audit-form-card">
+          <form id="auditForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="e4093135-9e4c-492b-8e3f-f1257cd2d997" />
+            <input type="hidden" name="subject" value="New PitchWise Deck Audit Submission" />
+            <input type="hidden" name="redirect" value="https://pitchwise.xyz/thank-you.html" />
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none;" />
+            <div class="form-title">Submit your deck</div>
+            <p class="form-sub">Takes about a minute. We'll email your audit back.</p>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Name <span class="req">*</span></label>
+                <input class="input" type="text" id="name" name="name" placeholder="Jane Founder" required />
+              </div>
+              <div class="field">
+                <label for="email">Email address <span class="req">*</span></label>
+                <input class="input" type="email" id="email" name="email" placeholder="jane@startup.com" required />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="startup">Startup name <span class="req">*</span></label>
+                <input class="input" type="text" id="startup" name="startup_name" placeholder="Acme Inc." required />
+              </div>
+              <div class="field">
+                <label for="website">Website / product URL <span class="req">*</span></label>
+                <input class="input" type="text" id="website" name="website_url" placeholder="acme.com" required />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="stage">Stage <span class="req">*</span></label>
+                <div class="select-wrap">
+                  <select class="select" id="stage" name="stage" required>
+                    <option value="" disabled selected hidden>Select stage</option>
+                    <option>Idea</option>
+                    <option>MVP</option>
+                    <option>Pre-revenue</option>
+                    <option>Revenue</option>
+                    <option>Pre-seed</option>
+                    <option>Seed</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="fundraising">Fundraising status <span class="req">*</span></label>
+                <div class="select-wrap">
+                  <select class="select" id="fundraising" name="fundraising_status" required>
+                    <option value="" disabled selected hidden>Select status</option>
+                    <option>Not raising yet</option>
+                    <option>Preparing to raise</option>
+                    <option>Actively raising</option>
+                    <option>Demo day</option>
+                    <option>Accelerator application</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="deck">Pitch deck link <span class="req">*</span></label>
+              <input class="input" type="url" id="deck" name="pitch_deck_link" placeholder="https://drive.google.com/..." required />
+              <div class="upload-hint" style="margin-top:8px;">Google Drive, Dropbox, DocSend, or PDF link. Please make sure access is set to "Anyone with the link can view."</div>
+              <div class="field-error" id="fileError"></div>
+            </div>
+
+            <div class="privacy-note">
+              <span class="lock"></span>
+              <span>Your deck link will only be used to generate your audit. We do not share your materials.</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit">Submit my deck for audit</button>
+            <p class="submit-help">We'll send the audit to your email within 24–48 hours.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ======================================================== FOOTER -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <a class="brand" href="PitchWise.html">
+      <span class="brand-mark">P</span>
+      PitchWise
+    </a>
+    <span class="copy">© 2026 PitchWise. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var form = document.getElementById("auditForm");
+    var input = document.getElementById("deck");
+    var errorEl = document.getElementById("fileError");
+
+    function showError(msg) {
+      errorEl.textContent = msg;
+      errorEl.classList.add("show");
+      input.setAttribute("aria-invalid", "true");
+    }
+    function clearError() {
+      errorEl.textContent = "";
+      errorEl.classList.remove("show");
+      input.removeAttribute("aria-invalid");
+    }
+    function isValidUrl(value) {
+      var v = value.trim();
+      if (!v) return false;
+      try {
+        var u = new URL(v);
+        return (u.protocol === "http:" || u.protocol === "https:") && !!u.hostname && u.hostname.indexOf(".") !== -1;
+      } catch (err) {
+        return false;
+      }
+    }
+
+    input.addEventListener("input", clearError);
+
+    form.addEventListener("submit", function (e) {
+      clearError();
+
+      // Native validation for text/email/select fields
+      if (!form.checkValidity()) {
+        e.preventDefault();
+        form.reportValidity();
+        return;
+      }
+      // Require a valid deck link
+      var link = input.value.trim();
+      if (!link) {
+        e.preventDefault();
+        showError("Please add a link to your pitch deck.");
+        input.focus();
+        return;
+      }
+      if (!isValidUrl(link)) {
+        e.preventDefault();
+        showError("Please enter a valid link (e.g. https://drive.google.com/...).");
+        input.focus();
+        return;
+      }
+
+      // Valid — allow native POST to Web3Forms.
+      // The hidden "redirect" field sends the user to the thank-you page on success.
+      var btn = form.querySelector(".btn-submit");
+      if (btn) {
+        btn.textContent = "Submitting…";
+        btn.style.pointerEvents = "none";
+        btn.style.opacity = "0.7";
+      }
+    });
+  })();
+
+  /* Sticky nav hairline on scroll (matches landing page behavior) */
+  (function () {
+    var nav = document.getElementById("nav");
+    if (!nav) return;
+    function onScroll() {
+      nav.classList.toggle("scrolled", window.scrollY > 8);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
+</body>
+</html>
