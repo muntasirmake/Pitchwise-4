@@ -748,6 +748,10 @@ section { position: relative; }
 }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 .footer .copy { font-size: 13px; color: var(--stone); }
+.footer-center { flex: 1; text-align: center; }
+.footer-right { text-align: right; white-space: nowrap; }
+.footer-email { color: var(--stone); text-decoration: underline; text-decoration-color: var(--hairline); text-underline-offset: 3px; }
+.footer-email:hover { color: var(--ink); }
 
 /* ============================================================
    Scroll reveal
@@ -1004,7 +1008,9 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .audience { grid-template-columns: 1fr; }
   .promo-strip { padding: 56px 28px; border-radius: var(--r-xxl); }
   .audit-mock { padding: 20px; }
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .footer-inner { flex-direction: column; align-items: center; gap: 16px; }
+  .footer-center { text-align: center; }
+  .footer-right { text-align: center; white-space: normal; }
 }
 
 @media (max-width: 479px) {
