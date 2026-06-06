@@ -35,6 +35,9 @@
 .po-cta-headline{font-size:clamp(28px,3vw,38px);font-weight:700;letter-spacing:-.8px;line-height:1.1;color:#1C2B33;margin:0 auto 20px;max-width:640px;text-wrap:balance}
 .po-cta-sub{font-size:clamp(15px,1.4vw,17px);line-height:1.6;color:#44545F;max-width:520px;margin:0 auto 28px;font-weight:400;text-wrap:pretty}
 .po-cta .price-note{font-size:13px;font-weight:400;color:#5E7079;margin:16px 0 0}
+.score-pill{display:inline-block;margin-top:10px;padding:4px 11px;border-radius:99px;font-size:11px;font-weight:700;letter-spacing:.3px;text-transform:uppercase}
+.score-pill--warn{background:rgba(239,68,68,.09);color:#b91c1c}
+.score-pill--ok{background:rgba(22,163,74,.09);color:#15803d}
 @media(max-width:1023px){.po-block{grid-template-columns:1fr;gap:40px;padding:48px 44px}.po-block--flip .po-figure{order:0}}
 @media(max-width:767px){.po-block{padding:32px 24px;border-radius:24px}.po-steps{grid-template-columns:1fr}.po-figure--framed{padding:22px}}
 @keyframes heroTitleIn{from{opacity:0;transform:translateY(10px);filter:blur(4px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
@@ -348,12 +351,14 @@
               <span class="score-cap">Before</span>
               <span class="score-num score-before">42</span>
               <span class="score-of">/ 100</span>
+              <span class="score-pill score-pill--warn">Unclear story</span>
             </div>
             <div class="score-arrow">→</div>
             <div class="score-col">
               <span class="score-cap">After</span>
               <span class="score-num score-after">88</span>
               <span class="score-of">/ 100</span>
+              <span class="score-pill score-pill--ok">Investor-ready</span>
             </div>
           </div>
         </article>
