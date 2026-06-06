@@ -10,6 +10,36 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
+<style>
+/* ── Product section: inlined so it renders even if styles.css is cached/stale ── */
+.po-blocks{display:flex;flex-direction:column;gap:28px;margin-top:64px}
+.po-block{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center;background:#fff;border:1px solid #EBEDF0;border-radius:32px;padding:56px 60px;transition:box-shadow 220ms ease,border-color 220ms ease,transform 220ms ease}
+.po-block:hover{border-color:#DADDE1;box-shadow:0 44px 84px -58px rgba(20,30,40,.46);transform:translateY(-2px)}
+.po-block--flip .po-figure{order:-1}
+.po-num{font-size:13px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:#0064E0;margin-bottom:20px}
+.po-block h3{font-size:clamp(27px,2.6vw,34px);font-weight:600;line-height:1.12;letter-spacing:-1px;color:#1C2B33;margin-bottom:22px;text-wrap:balance}
+.po-copy{display:flex;flex-direction:column;gap:15px}
+.po-copy p{font-size:15.5px;line-height:1.62;color:#44545F;margin:0;text-wrap:pretty}
+.po-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.po-steps{list-style:none;padding:0;margin:24px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
+.po-steps li{display:flex;gap:10px;align-items:center;font-size:14.5px;color:#1C2B33;font-weight:500}
+.po-steps .sf-num{flex:none;width:26px;height:26px;border-radius:7px;background:#F0F2F5;color:#2E3B43;display:grid;place-items:center;font-size:11px;font-weight:800}
+.po-figure{border-radius:16px;overflow:hidden;border:1px solid #EBEDF0;aspect-ratio:4/3;display:grid;place-items:center;position:relative}
+.po-figure--img{background:#F0F2F5}
+.po-figure--img img{width:100%;height:100%;object-fit:cover;display:block}
+.po-figure--framed{background:#FEFDFD;padding:34px}
+.po-figure--framed img{width:100%;height:auto;max-height:100%;object-fit:contain;border-radius:6px;box-shadow:0 14px 38px -14px rgba(16,24,40,.26),0 2px 6px -2px rgba(16,24,40,.08)}
+.po-figure--score{display:flex;align-items:center;justify-content:center;gap:28px;background:#FEFDFD}
+.po-figure--score .score-num{font-size:clamp(48px,6vw,64px)}
+.po-cta{text-align:center;margin-top:56px}
+.po-cta-headline{font-size:clamp(28px,3vw,38px);font-weight:700;letter-spacing:-.8px;line-height:1.1;color:#1C2B33;margin:0 auto 20px;max-width:640px;text-wrap:balance}
+.po-cta-sub{font-size:clamp(15px,1.4vw,17px);line-height:1.6;color:#44545F;max-width:520px;margin:0 auto 28px;font-weight:400;text-wrap:pretty}
+.po-cta .price-note{font-size:13px;font-weight:400;color:#5E7079;margin:16px 0 0}
+@media(max-width:1023px){.po-block{grid-template-columns:1fr;gap:40px;padding:48px 44px}.po-block--flip .po-figure{order:0}}
+@media(max-width:767px){.po-block{padding:32px 24px;border-radius:24px}.po-steps{grid-template-columns:1fr}.po-figure--framed{padding:22px}}
+@keyframes heroTitleIn{from{opacity:0;transform:translateY(10px);filter:blur(4px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@media(prefers-reduced-motion:no-preference){.hero-title-anim{animation:heroTitleIn 700ms cubic-bezier(.22,1,.36,1) both;animation-delay:80ms}}
+</style>
 <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -240,7 +270,7 @@
             </div>
           </div>
           <div class="po-figure po-figure--framed">
-            <img src="images/pitchwise-playbook-cover.jpg" alt="PitchWise Playbook — a deck transformation system for pre-seed and seed founders" loading="lazy" />
+            <img src="images/playbook-cover.png" alt="PitchWise Playbook — a deck transformation system for pre-seed and seed founders" loading="lazy" />
           </div>
         </article>
 
