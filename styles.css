@@ -262,7 +262,10 @@ section { position: relative; }
 /* ============================================================
    Hero
    ============================================================ */
-.hero { padding: 64px 0 88px; overflow: hidden; }
+.hero {
+  padding: 64px 0 88px;
+  overflow: hidden;
+}
 .hero-head { max-width: 880px; margin: 0 auto; text-align: center; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
@@ -287,10 +290,12 @@ section { position: relative; }
 .fp-scroller {
   display: flex;
   gap: 20px;
+  max-width: var(--max-w);
+  margin: 0 auto;
   overflow-x: auto;
   scroll-snap-type: x proximity;
-  padding: 8px max(32px, calc((100vw - 1200px) / 2 + 32px)) 28px;
-  scroll-padding-left: max(32px, calc((100vw - 1200px) / 2 + 32px));
+  padding: 8px 32px 28px;
+  scroll-padding-left: 32px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
@@ -727,6 +732,106 @@ html.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 7
 html.js .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   html.js .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ============================================================
+   Pitch OS update — new components (existing tokens only)
+   ============================================================ */
+/* Hero supporting bullets */
+.hero-bullets {
+  list-style: none; padding: 0;
+  margin: 0 auto 30px;
+  max-width: 680px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px 28px; text-align: left;
+}
+.hero-bullets li { display: flex; gap: 12px; align-items: flex-start; }
+.hero-bullets .ic {
+  flex: none; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--primary-soft, rgba(0,100,224,0.1)); color: var(--primary);
+  display: grid; place-items: center; font-size: 13px; font-weight: 700; margin-top: 1px;
+}
+.hero-bullets span:last-child { font-size: 15.5px; color: var(--charcoal); line-height: 1.4; font-weight: 500; }
+
+/* Hero price line */
+.hero-price {
+  display: inline-flex; align-items: baseline; gap: 8px;
+  margin-top: 4px; font-size: 15px; color: var(--slate); font-weight: 500;
+}
+.hero-price strong { color: var(--ink-deep); font-weight: 700; }
+.hero-price .was { text-decoration: line-through; color: var(--steel); }
+
+/* Problem chips — warn variant */
+.chip--warn .tick { color: var(--attention); }
+
+/* Four-up deliverables */
+.deliverables--4 { grid-template-columns: 1fr 1fr; max-width: 980px; margin-left: auto; margin-right: auto; }
+
+/* Skill-file list inside a deliverable card */
+.skill-list { list-style: none; padding: 0; margin: 4px 0 0; display: grid; gap: 8px; }
+.skill-list li { display: flex; gap: 10px; align-items: center; font-size: 14px; color: var(--ink-deep); font-weight: 500; }
+.skill-list .sf-num {
+  flex: none; width: 24px; height: 24px; border-radius: 6px;
+  background: var(--surface-soft); color: var(--ink-soft);
+  display: grid; place-items: center; font-size: 11px; font-weight: 800;
+}
+
+/* Before/After scorecard visual */
+.deliv-visual--score {
+  display: flex; align-items: center; justify-content: center; gap: 22px;
+  background: #FEFDFD; background-image: none;
+}
+.score-col { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.score-cap { font-size: 11px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; color: var(--slate); }
+.score-num { font-size: 44px; font-weight: 800; letter-spacing: -1.5px; line-height: 1; }
+.score-before { color: #FFB76C; }
+.score-after { color: #26CCC2; }
+.score-of { font-size: 12px; color: var(--steel); font-weight: 600; }
+.score-arrow { font-size: 24px; color: var(--stone); }
+
+/* Workflow steps — 8 across 4 columns */
+.steps--flow { grid-template-columns: repeat(4, 1fr); }
+
+/* FOMO body */
+.fomo-body { max-width: 680px; margin: 30px auto 0; text-align: center; }
+.fomo-body p { font-size: 18px; line-height: 1.6; color: var(--charcoal); margin: 0 0 18px; }
+.fomo-body p:last-child { margin-bottom: 0; color: var(--ink-deep); font-weight: 600; }
+.fomo-body .silence { color: var(--ink-deep); font-weight: 600; }
+
+/* Pricing card */
+.price-card {
+  background: var(--canvas);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-xxl);
+  box-shadow: 0 50px 90px -60px rgba(20, 30, 40, 0.45);
+  padding: 38px 34px 32px;
+}
+.price-label { font-size: 13px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; color: var(--slate); }
+.price-amounts { display: flex; align-items: baseline; gap: 14px; margin: 14px 0 6px; }
+.price-old { font-size: 28px; font-weight: 600; color: var(--steel); text-decoration: line-through; letter-spacing: -1px; }
+.price-now { font-size: 60px; font-weight: 800; color: var(--ink-deep); letter-spacing: -2.5px; line-height: 1; }
+.price-now .per { font-size: 18px; font-weight: 600; color: var(--slate); letter-spacing: 0; }
+.price-save {
+  display: inline-block; font-size: 13px; font-weight: 700;
+  color: var(--success); background: rgba(46,158,91,0.1);
+  padding: 6px 12px; border-radius: var(--r-full);
+}
+.price-list { list-style: none; padding: 0; margin: 26px 0 28px; display: grid; gap: 14px; }
+.price-list li { display: flex; gap: 12px; align-items: flex-start; }
+.price-list .ic {
+  flex: none; width: 24px; height: 24px; border-radius: 50%;
+  background: rgba(46,158,91,0.12); color: var(--success);
+  display: grid; place-items: center; font-size: 13px; font-weight: 700; margin-top: 1px;
+}
+.price-list span:last-child { font-size: 15px; color: var(--ink-deep); line-height: 1.45; font-weight: 500; }
+.price-card .btn { width: 100%; justify-content: center; }
+.price-note { font-size: 13px; color: var(--slate); text-align: center; margin: 14px 0 0; line-height: 1.5; }
+
+@media (max-width: 767px) {
+  .hero-bullets { grid-template-columns: 1fr; max-width: 360px; }
+  .steps--flow { grid-template-columns: repeat(2, 1fr); }
+  .deliverables--4 { grid-template-columns: 1fr; max-width: 560px; }
+  .price-now { font-size: 52px; }
 }
 
 /* ============================================================
