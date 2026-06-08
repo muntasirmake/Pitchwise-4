@@ -12,6 +12,15 @@
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="audit.css" />
 <script>document.documentElement.classList.add("js");</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KC6GDRJXV1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KC6GDRJXV1');
+</script>
 </head>
 <body>
 
@@ -23,7 +32,7 @@
       PitchWise
     </a>
     <div class="nav-actions">
-      <a class="btn btn-primary" href="./index.html#pricing">PitchOS Coming Soon</a>
+      <a class="btn btn-primary" href="./index.html#pricing" onclick="gtag('event','pitch_os_coming_soon_click')">PitchOS Coming Soon</a>
     </div>
   </div>
 </header>
@@ -211,6 +220,7 @@
       .then(function (res) { return res.json(); })
       .then(function (data) {
         if (data.success) {
+          if (typeof gtag !== "undefined") { gtag("event", "free_audit_submit"); }
           window.location.href = "https://pitchwise.xyz/thank-you.html";
         } else {
           if (btn) { btn.textContent = "Submit my deck for audit"; btn.style.pointerEvents = ""; btn.style.opacity = ""; }

@@ -110,6 +110,15 @@
     .ty-page { padding: 40px 0 56px; }
   }
 </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KC6GDRJXV1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KC6GDRJXV1');
+</script>
 </head>
 <body>
 
@@ -121,7 +130,7 @@
       PitchWise
     </a>
     <div class="nav-actions">
-      <a class="btn btn-primary" href="./index.html#get">PitchOS Coming Soon</a>
+      <a class="btn btn-primary" href="./index.html#get" onclick="gtag('event','pitch_os_coming_soon_click')">PitchOS Coming Soon</a>
     </div>
   </div>
 </header>
@@ -140,7 +149,7 @@
         <h2>Want to start fixing your deck now?</h2>
         <p class="ty-sub">Pitch OS gives you the playbook, deck template, and AI Pitch Deck Skill Files to rebuild your deck slide by slide.</p>
         <div class="ty-actions">
-          <a class="btn btn-primary btn-lg" href="./index.html#get">PitchOS Coming Soon</a>
+          <a class="btn btn-primary btn-lg" href="./index.html#get" onclick="gtag('event','pitch_os_coming_soon_click')">PitchOS Coming Soon</a>
           <a class="btn btn-secondary btn-lg" href="./index.html">Back to homepage</a>
         </div>
       </div>
